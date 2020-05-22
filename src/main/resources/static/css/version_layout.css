@@ -1,0 +1,51 @@
+.placeholder-header {
+    height: 4px;
+}
+
+.card-layout {
+    border: 1px solid #3F5773;
+    border-radius:5px;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.2);
+    margin: 14px;
+    background-color: white;
+}
+
+.card-header {
+    padding: 10px 15px 10px 15px;
+    /*color: black;*/
+}
+
+.card-container {
+    border-top: 2px solid #3F5773;
+    padding: 18px;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+h4 {
+    color: black;
+    font-family: "楷体", KaiTi;
+    font-size: 16pt;
+    font-weight: bolder;
+}
+
+.card-layout label {
+    color: black;
+    font-family: "楷体", KaiTi;
+    font-size: 14pt;
+}
+
+input {
+    color: black;
+    font-family: "楷体", KaiTi;
+    font-size: 14pt;
+}
+
+#top10 {
+    font-family:'KaiTi';
+    color: black;
+    font-size: 12pt;
+    font-weight: bold;
+}

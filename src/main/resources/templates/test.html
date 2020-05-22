@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>第一个 ECharts 实例</title>
@@ -9,6 +9,11 @@
 <body>
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <div id="main" style="width: 600px;height:400px;"></div>
+<!--<span th:href="@{/}"/>-->
+<!--<th:block var="contextPath" value="${#request.contextPath}" />-->
+<script th:with="contextPath=${#request.contextPath}">
+    var one=/*[[@{/version}]]*/ '';
+console.log(one)</script>
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));

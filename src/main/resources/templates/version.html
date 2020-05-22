@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>第一个 ECharts 实例</title>
+    <!--不通过th标签的引用方式-->
+    <script src="/lib/echarts/echarts.min.js"></script>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/version_layout.css">
+    <script src="../static/js/version_chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-1">
+            </div>
+
+            <div class="col-md-10">
+                <div class="placeholder-header">
+                </div>
+
+                <div class="card-layout">
+                    <div class="card-header">
+                        <h4>1. 单个客户各类产品的中标量</h4>
+                    </div>
+
+                    <div class="card-container">
+                        <label for="first4_1" class="control-label">客户名称</label>
+                        <input type="text" id="first4_1" placeholder="客户名称" style="width: 300px" onChange="menu4_1();menu4_1_2()">
+
+                        <div class="margin-auto" style="display: flex">
+                            <div class="margin-auto" id="pieEchart4_1" style="width: 550px;height:400px;">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,13 +1,14 @@
-package demo.controller;
+package demo.pager;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class TestController {
-    @RequestMapping("/test")
+public class VersionController {
+
+    @RequestMapping("/version")
     public String particle() {
-        System.out.println("testing........");
-        return "test";
+        System.out.println("version........");
+        return "version";
     }
 }

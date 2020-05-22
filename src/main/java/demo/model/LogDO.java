@@ -1,11 +1,15 @@
 package demo.model;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 
 import java.util.Date;
+import java.util.List;
 
-@Document(indexName = "gwmsq-*", type = "logs")
+@Document(indexName = "gwmsw-*", type = "logs")
 public class LogDO {
     @Id
     private String Id;
@@ -13,10 +17,10 @@ public class LogDO {
     private String behavior;
     private String body;
     private String clientId;
-    private String company;
+    private String portal;
     private String connId;
     private Date creatAt;
-    private String headers;
+    private List<String> headers;
     private String host;
     private String ip;
     private String level;
@@ -26,10 +30,22 @@ public class LogDO {
     private String method;
     private String page;
     private String params;
-    private String platform;
+    private String os;
     private Long port;
     private String thread_name;
     private String uri;
+
+//    @JsonProperty(value = "@timestamp")
+    @JsonAlias("@timestamp")
+    private Date timestamp;
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
 
     public String getAcctId() {
         return acctId;
@@ -63,12 +79,20 @@ public class LogDO {
         this.clientId = clientId;
     }
 
-    public String getCompany() {
-        return company;
+    public String getPortal() {
+        return portal;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setPortal(String portal) {
+        this.portal = portal;
+    }
+
+    public String getOs() {
+        return os;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
     }
 
     public String getConnId() {
@@ -87,11 +111,11 @@ public class LogDO {
         this.creatAt = creatAt;
     }
 
-    public String getHeaders() {
+    public List<String> getHeaders() {
         return headers;
     }
 
-    public void setHeaders(String headers) {
+    public void setHeaders(List<String> headers) {
         this.headers = headers;
     }
 
@@ -167,14 +191,6 @@ public class LogDO {
         this.params = params;
     }
 
-    public String getPlatform() {
-        return platform;
-    }
-
-    public void setPlatform(String platform) {
-        this.platform = platform;
-    }
-
     public Long getPort() {
         return port;
     }
@@ -199,6 +215,14 @@ public class LogDO {
         this.uri = uri;
     }
 
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
     @Override
     public String toString() {
         return "LogDO{" +
@@ -207,10 +231,10 @@ public class LogDO {
                 ", behavior='" + behavior + '\'' +
                 ", body='" + body + '\'' +
                 ", clientId='" + clientId + '\'' +
-                ", company='" + company + '\'' +
+                ", portal='" + portal + '\'' +
                 ", connId='" + connId + '\'' +
                 ", creatAt=" + creatAt +
-                ", headers='" + headers + '\'' +
+                ", headers=" + headers +
                 ", host='" + host + '\'' +
                 ", ip='" + ip + '\'' +
                 ", level='" + level + '\'' +
@@ -220,10 +244,11 @@ public class LogDO {
                 ", method='" + method + '\'' +
                 ", page='" + page + '\'' +
                 ", params='" + params + '\'' +
-                ", platform='" + platform + '\'' +
+                ", os='" + os + '\'' +
                 ", port=" + port +
                 ", thread_name='" + thread_name + '\'' +
                 ", uri='" + uri + '\'' +
+                ", timestamp=" + timestamp +
                 '}';
     }
 }
