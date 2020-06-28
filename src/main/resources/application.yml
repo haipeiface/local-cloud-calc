@@ -1,0 +1,5 @@
+spring:
+  social:
+    wechatmp:
+      app-id: wx6ec8fca4f7bbd37d
+      app-secret: ad19533294d6661984a5c0933bd217e8

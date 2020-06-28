@@ -20,18 +20,37 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	flatDir {
+		dirs 'lib'
+	}
 }
 
 
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('org.springframework.boot:spring-boot-starter-actuator')
 
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.0.2.RELEASE'
-	compile group: 'io.netty', name: 'netty-all', version: '4.1.24.Final'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
 
-	compile group: 'io.projectreactor', name: 'reactor-core', version: '3.1.0.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter'
 
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.7.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
 
+	//------------ spring social ----------------
+	compile group: 'org.springframework.social', name: 'spring-social-security', version: '1.1.0.RELEASE'
+
+	compile group: 'org.springframework.social', name: 'spring-social-config', version: '1.1.0.RELEASE'
+
+	compile group: 'org.springframework.social', name: 'spring-social-core'
+
+	compile group: 'org.springframework.social', name: 'spring-social-web'
+
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.16'
+
+	//------------- apache commons ---------------
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+
+	compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.1'
+
+	compile name: 'spring-social-autoconfigure'
 }
