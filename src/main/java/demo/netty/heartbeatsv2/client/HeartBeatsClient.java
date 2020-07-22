@@ -59,6 +59,7 @@ public class HeartBeatsClient {
                     @Override
                     protected void initChannel(Channel ch) throws Exception {
                         ch.pipeline().addLast(watchdog.handlers());
+                        //System.out.println("xxxxxxxxxxxx" + ch.pipeline().first().getClass().getName());
                     }
                 });
 
