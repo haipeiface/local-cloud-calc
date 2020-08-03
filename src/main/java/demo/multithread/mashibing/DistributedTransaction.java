@@ -1,4 +1,4 @@
-package demo.lettuce;
+package demo.multithread.mashibing;
 
 import java.util.ArrayList;
 import java.util.List;
