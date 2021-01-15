@@ -298,17 +298,17 @@
     }
 
     function render() {
-        if (!flag) {
-            geometry.rotateY(Math.PI / 200)
-        }
-        around.rotateX(Math.PI / 1000)
+//        if (!flag) {
+//            geometry.rotateY(Math.PI / 200)
+//        }
+//        around.rotateX(Math.PI / 1000)
 
         TWEEN.update();
 
         camera.lookAt(scene.position);
-        geometry.colors.forEach(function (color) {
-            color.setRGB(Math.random() * 1, Math.random() * 1, Math.random() * 1);
-        });
+//        geometry.colors.forEach(function (color) {
+//            color.setRGB(Math.random() * 1, Math.random() * 1, Math.random() * 1);
+//        });
 
         geometry.verticesNeedUpdate = true;
         geometry.colorsNeedUpdate = true;

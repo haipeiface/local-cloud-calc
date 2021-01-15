@@ -38,4 +38,8 @@ dependencies {
 	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
 	compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.4'
 
+	compileOnly "org.springframework.boot:spring-boot-configuration-processor"
+	implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-vfs2
+	compile group: 'org.apache.commons', name: 'commons-vfs2', version: '2.7.0'
 }
