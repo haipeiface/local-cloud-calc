@@ -14,6 +14,9 @@ import java.util.*;
 public class ThreeSum {
 
     public static void main(String args[]) {
+        List integers = Arrays.asList(1, 2, 3);
+
+
         System.out.println(System.currentTimeMillis());
 //        "10226733"
 //        String str = "utf-8";

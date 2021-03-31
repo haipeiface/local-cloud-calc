@@ -3,6 +3,7 @@ buildscript {
 		springBootVersion = '2.0.7.RELEASE'
 	}
 	repositories {
+		mavenCentral()
 		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 		maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
 	}
@@ -19,12 +20,12 @@ apply plugin: 'io.spring.dependency-management'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+	jcenter()
 }
 
-
 dependencies {
-	implementation('org.springframework.boot:spring-boot-starter-web')
+//	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation('org.springframework.boot:spring-boot-starter-webflux')
     implementation('org.springframework.boot:spring-boot-starter-actuator')
 
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.0.2.RELEASE'
@@ -40,6 +41,19 @@ dependencies {
 
 	compileOnly "org.springframework.boot:spring-boot-configuration-processor"
 	implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
-	// https://mvnrepository.com/artifact/org.apache.commons/commons-vfs2
+
 	compile group: 'org.apache.commons', name: 'commons-vfs2', version: '2.7.0'
+
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-zuul', version: '2.0.4.RELEASE'
+
+	compile "org.aspectj:aspectjweaver:1.8.8"
+	compile "org.aspectj:aspectjrt:1.8.13"
+	compile "org.javassist:javassist:3.22.0-GA"
+
+	compile group: 'com.alibaba', name: 'fastjson', version: '1.1.25'
+
+	implementation group: 'org.apache.mina', name: 'mina-core', version: '2.0.9'
+
+	implementation group: 'org.springframework.statemachine', name: 'spring-statemachine-core', version: '2.0.4.RELEASE'
+
 }

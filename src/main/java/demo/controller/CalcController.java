@@ -1,5 +1,6 @@
 package demo.controller;
 
+import demo.aoplog.Loggable;
 import demo.model.CalcParam;
 
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +13,10 @@ public class CalcController {
         return a + b;
     }
 
+    @Loggable(descp = "api add", include = "")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public int addPost(@RequestBody CalcParam calcParam) {
+    public int addPost(@RequestBody CalcParam calcParam) throws InterruptedException {
+//        Thread.sleep(100000000);
         return calcParam.getA() + calcParam.getB();
     }
 
